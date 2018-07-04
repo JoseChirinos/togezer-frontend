@@ -14,6 +14,7 @@ import Typography from '@material-ui/core/Typography';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import FingerprintIcon from '@material-ui/icons/Fingerprint';
 import SendIcon from '@material-ui/icons/Send';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
 
 /* Components */
 import TextField from '@material-ui/core/TextField';
@@ -23,73 +24,110 @@ const SignIn = (props)=>{
   const { classes } = props;
   return(
     <Grid item xs={12} className={ classes.content }>
-      <Grid 
-          container 
-          spacing={0} 
-          justify="center" 
-          alignItems="center"
-          direction="row">
-        <Grid item xs={12}>
-          <img
-            className={ classes.logo } 
-            src="/assets/images/logo-togezer.44d64ea7.png" 
-            alt="logo togezer"/>
+      <Paper className={ classes.paperMain }>
+        <Grid 
+            container 
+            spacing={0} 
+            justify="center" 
+            alignItems="center"
+            direction="row">
+          <Grid item xs={12}>
+            <img
+              className={ classes.logo } 
+              src="/assets/images/logo-togezer-white.png" 
+              alt="logo togezer"/>
+          </Grid>
+          <Grid item xs={12}>
+            <FormControl className={classes.formControl}>
+                <InputLabel
+                  FormLabelClasses={{
+                    root: classes.cssLabel,
+                    focused: classes.cssFocused,
+                  }}
+                  htmlFor="custom-css-input"
+                >
+                  Username or email
+                </InputLabel>
+                <Input
+                  classes={{
+                    underline: classes.cssUnderline,
+                    root: classes.input,
+                  }}
+                  startAdornment={
+                    <InputAdornment position="start">
+                      <PersonOutlineIcon />
+                    </InputAdornment>
+                  }
+                />
+              
+              {/* <InputLabel htmlFor="email">Username or Email</InputLabel>
+              <Input
+                id="email"
+                className={ classes.input }
+                startAdornment={
+                  <InputAdornment position="start">
+                    <PersonOutlineIcon />
+                  </InputAdornment>
+                }
+              /> */}
+            </FormControl>
+          </Grid>
+          <Grid item xs={12}>
+            <FormControl className={classes.formControl}>
+              <InputLabel
+                FormLabelClasses={{
+                  root: classes.cssLabel,
+                  focused: classes.cssFocused,
+                }}
+                htmlFor="custom-css-input"
+              >
+                password
+              </InputLabel>
+              <Input
+                type="password"
+                classes={{
+                  underline: classes.cssUnderline,
+                  root: classes.input,
+                }}
+                startAdornment={
+                  <InputAdornment position="start">
+                    <PersonOutlineIcon />
+                  </InputAdornment>
+                }
+              />
+            </FormControl>
+          </Grid>
+          <Grid item xs={12}>
+            <FormControl className={classes.formControl}>
+              <Button className={ classes.button } variant="contained" color="primary">
+                Sing In
+              </Button>
+            </FormControl>
+          </Grid>
+          <Grid item xs={10}>
+            <Divider/>
+          </Grid>
+          <Grid item xs={8}>
+            <Typography align="center" className={ classes.info }>
+                If you want to access TogeZer World
+                just send us an email at<br/> 
+                <a 
+                  href="mailto:hello@togezer.travel"
+                  className={ classes.mail }
+                >
+                  hello@togezer.travel
+                </a>
+            </Typography>
+          </Grid>
+          <Grid item xs={10}>
+            <Paper className={ classes.paper }>
+              <a href="http://fb.com" className={ classes.linker } target="_blank"></a>
+              <VpnKeyIcon className={ classes.iconForget }/>
+              <span>Forgot Password?</span>
+            </Paper>
+          </Grid>
         </Grid>
-        <Grid item xs={12}>
-          <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="email">Username or Email</InputLabel>
-            <Input
-              id="email"
-              className={ classes.input }
-              startAdornment={
-                <InputAdornment position="start">
-                  <PersonOutlineIcon />
-                </InputAdornment>
-              }
-            />
-          </FormControl>
-        </Grid>
-        <Grid item xs={12}>
-          <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="password">Password</InputLabel>
-            <Input
-              id="password"
-              type="password"
-              className={ classes.input }
-              startAdornment={
-                <InputAdornment position="start">
-                  <FingerprintIcon />
-                </InputAdornment>
-              }
-            />
-          </FormControl>
-        </Grid>
-        <Grid item xs={12}>
-          <FormControl className={classes.formControl}>
-            <Button className={ classes.button } variant="contained" color="primary">
-              Sing In
-            </Button>
-          </FormControl>
-        </Grid>
-        <Grid item xs={10}>
-          <Divider/>
-        </Grid>
-        <Grid item xs={8}>
-          <Typography align="center" className={ classes.info }>
-              If you want to access TogeZer World
-              just send us an email at
-          </Typography>
-        </Grid>
-        <Grid item xs={10}>
-          <Paper className={ classes.paper }>
-            <a href="mailto:hello@togezer.travel" className={ classes.linker }></a>
-            <Button variant="fab" color="secondary" className={ classes.mail }>
-              <SendIcon/>
-            </Button>
-            mailto:hello@togezer.travel
-          </Paper>
-        </Grid>
-      </Grid>
+      </Paper>
     </Grid>
   )
 };

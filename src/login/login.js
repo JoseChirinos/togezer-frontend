@@ -6,13 +6,19 @@ import Hidden from '@material-ui/core/Hidden';
 
 /* Components */
 import SignIn from './login-signin';
-import TextMobileStepper from './login-slider';
 
 class Login extends Component{
   render(){
     const { classes } = this.props;
     return(
-      <section className={ classes.container }>
+      <section 
+        className={ classes.container }
+        style={{
+          backgroundImage: `url(/assets/images/bg-login-min.jpg)`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover'
+        }}  
+      >
         <div style={{ flexGrow: 1}}>
           <Grid item xs={12}>
             <Grid 
@@ -25,11 +31,6 @@ class Login extends Component{
                 <Grid item xs={12} sm={12} md={6} lg={4} xl={3} className={classes.relative}>
                   <SignIn/>
                 </Grid>
-                <Hidden smDown>
-                  <Grid item xs={ 12 } sm={12} md={6} lg={8} xl={9} className={classes.relative}>
-                    <TextMobileStepper/>
-                  </Grid>
-                </Hidden>
             </Grid>
           </Grid>
         </div>

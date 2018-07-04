@@ -1,5 +1,8 @@
 export const loginStyle = {
   container:{
+    width: '100vw',
+    minHeight: '100vh',
+    background: 'linear-gradient(to right, #8e2de2, #4a00e0)',
   },
   relative:{
     position:'relative',
@@ -11,26 +14,60 @@ export const signInStyle = {
   container:{
     height:'100vh',
   },
+  paperMain:{
+    backgroundColor: '#1b222a',
+    width: 350,
+    borderRadius:5,
+    margin: '0 auto',
+    paddingTop:50,
+    paddingBottom:50,
+    marginTop:70,
+    '@media (max-width: 500px) ':{
+      width: '100%',
+    }
+  },
   logo:{
     display:'block',
     width:150,
-    marginLeft:'auto',
-    marginRight: 'auto',
+    margin:'0 auto',
+    marginBottom: 35,
+  },
+  cssLabel: {
+      color: '#fff',
+  },
+  cssFocused: {},
+  cssUnderline: {
+    '&:after': {
+      borderBottomColor: '#1934cd',
+    },
+    '&:before': {
+      borderBottomColor: '#3e4750',
+    },
   },
   formControl:{
     display: 'block',
     position: 'relative',
-    margin: '22px auto',
-    width: 300,
+    margin: '10px auto',
+    width: 250,
   },
   input:{
-    width: 300,
+    width: '100%',
     fontSize:16,
+    color: '#fff',
+    padding: 7,
   },
   button:{
+    backgroundColor:'#1a33cd',
     display: 'block',
     width: 200,
-    margin: '0 auto',
+    margin: '30px auto',
+  },
+  mail:{
+    textDecoration: 'none',
+    color: '#8a9af3',
+    '&:hover': {
+      color: '#536bef',
+    },
   },
   paper:{
     position:'relative',
@@ -38,7 +75,7 @@ export const signInStyle = {
     padding:10,
     textAlign:'center',
     backgroundColor:'#2d2d2d',
-    color:'#a7a7a7',
+    color:'#fff',
   },
   linker:{
     bottom: 0,
@@ -48,12 +85,12 @@ export const signInStyle = {
     top: 0,
     zIndex: 7,
   },
-  mail:{
-    margin: '0 auto',
+  iconForget:{
+    verticalAlign:'middle',
     marginRight: 15,
-    backgroundColor:'#434444',
   },
   info:{
+    color:"#fff",
     margin: 15,
   }
 };

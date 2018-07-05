@@ -7,11 +7,11 @@ import {
 import Loadable from 'react-loadable';
 
 /*loading*/
-import Loading from '../../common/loading/loading';
+  //import Loading from '../../common/loading/loading';
 /*404 error*/
-import NoMatch from '../../common/notmatch/notmatch';
+  //import NoMatch from '../../common/notmatch/notmatch';
 /*Home Page*/
-import HomePage from '../../pages/home-page';
+  //import HomePage from '../../pages/home-page';
 /*components format Code - Splitting
 const EventPage = Loadable({
   loader: ()=> import('../../pages/event-page/containers/event-page'),
@@ -19,10 +19,20 @@ const EventPage = Loadable({
 })
 */
 
+const HomePage = ()=>(
+  <div>Home</div>
+);
+const NoMatch = ()=>(
+  <div>404</div>
+);
+const Test = ()=>(
+  <div>Si jala</div>
+)
 const RouterList = (props)=>{
   return(
     <Switch>
       <Route exact path="/" component={HomePage}/>
+      <Route exact path="/hola" component={ Test }/>
       <Route component={NoMatch} />
     </Switch>        
   )

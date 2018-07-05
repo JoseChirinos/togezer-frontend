@@ -91,7 +91,7 @@ const SignIn = (props)=>{
                 }}
                 startAdornment={
                   <InputAdornment position="start">
-                    <PersonOutlineIcon />
+                    <VpnKeyIcon />
                   </InputAdornment>
                 }
               />
@@ -122,7 +122,7 @@ const SignIn = (props)=>{
           <Grid item xs={10}>
             <Paper className={ classes.paper }>
               <a href="http://fb.com" className={ classes.linker } target="_blank"></a>
-              <VpnKeyIcon className={ classes.iconForget }/>
+              <FingerprintIcon className={ classes.iconForget }/>
               <span>Forgot Password?</span>
             </Paper>
           </Grid>

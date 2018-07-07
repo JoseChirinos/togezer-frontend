@@ -29,7 +29,7 @@ class Login extends Component{
                 direction="row">
                 
                 <Grid item xs={12} sm={12} md={6} lg={4} xl={3} className={classes.relative}>
-                  <SignIn/>
+                  <SignIn handleLogin={ this.props.handleLogin }/>
                 </Grid>
             </Grid>
           </Grid>

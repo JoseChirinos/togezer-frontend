@@ -99,7 +99,7 @@ const SignIn = (props)=>{
           </Grid>
           <Grid item xs={12}>
             <FormControl className={classes.formControl}>
-              <Button className={ classes.button } variant="contained" color="primary">
+              <Button onClick={ props.handleLogin } className={ classes.button } variant="contained" color="primary">
                 Sing In
               </Button>
             </FormControl>

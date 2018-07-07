@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { loginStyle } from './login.styles.js';
+import { loginStyle } from './styles.js';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';

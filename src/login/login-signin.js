@@ -1,5 +1,5 @@
 import React from 'react';
-import { signInStyle } from './login.styles.js';
+import { signInStyle } from './styles.js';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';

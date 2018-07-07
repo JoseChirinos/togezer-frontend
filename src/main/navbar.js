@@ -14,7 +14,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import { mailFolderListItems, otherMailFolderListItems } from './item-list';
+import MenuList from './menu-list';
 
 const drawerWidth = 240;
 
@@ -23,7 +23,6 @@ const styles = theme => ({
     flexGrow: 1,
   },
   appFrame: {
-    height: 430,
     zIndex: 1,
     overflow: 'hidden',
     position: 'relative',
@@ -31,7 +30,7 @@ const styles = theme => ({
     width: '100%',
   },
   appBar: {
-    position: 'absolute',
+    position: 'fixed',
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -47,9 +46,6 @@ const styles = theme => ({
   'appBarShift-left': {
     marginLeft: drawerWidth,
   },
-  'appBarShift-right': {
-    marginRight: drawerWidth,
-  },
   menuButton: {
     marginLeft: 12,
     marginRight: 20,
@@ -58,8 +54,9 @@ const styles = theme => ({
     display: 'none',
   },
   drawerPaper: {
-    position: 'relative',
+    position: 'fixed',
     width: drawerWidth,
+    backgroundColor: '#1b222b',
   },
   drawerHeader: {
     display: 'flex',
@@ -68,20 +65,20 @@ const styles = theme => ({
     padding: '0 8px',
     ...theme.mixins.toolbar,
   },
+  backIcon: {
+    color: '#fff',
+  },
   content: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
-    padding: theme.spacing.unit * 3,
+    padding: 0,
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
   },
   'content-left': {
-    marginLeft: -drawerWidth,
-  },
-  'content-right': {
-    marginRight: -drawerWidth,
+    marginLeft: 0,
   },
   contentShift: {
     transition: theme.transitions.create('margin', {
@@ -90,17 +87,13 @@ const styles = theme => ({
     }),
   },
   'contentShift-left': {
-    marginLeft: 0,
-  },
-  'contentShift-right': {
-    marginRight: 0,
-  },
+    marginLeft: drawerWidth,
+  }
 });
 
 class Navbar extends React.Component {
   state = {
-    open: false,
-    anchor: 'left',
+    open: true,
   };
 
   handleDrawerOpen = () => {
@@ -111,64 +104,38 @@ class Navbar extends React.Component {
     this.setState({ open: false });
   };
 
-  handleChangeAnchor = event => {
-    this.setState({
-      anchor: event.target.value,
-    });
-  };
-
   render() {
     const { classes, theme } = this.props;
-    const { anchor, open } = this.state;
+    const { open } = this.state;
 
     const drawer = (
       <Drawer
         variant="persistent"
-        anchor={anchor}
+        anchor="left"
         open={open}
         classes={{
           paper: classes.drawerPaper,
         }}
       >
-        <div className={classes.drawerHeader}>
-          <IconButton onClick={this.handleDrawerClose}>
-            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-          </IconButton>
-        </div>
-        <Divider />
-        <List>{mailFolderListItems}</List>
-        <Divider />
-        <List>{otherMailFolderListItems}</List>
+          <div className={classes.drawerHeader}>
+            <IconButton onClick={this.handleDrawerClose}>
+              <ChevronLeftIcon className={ classes.backIcon } />
+            </IconButton>
+          </div>
+          <MenuList/>
       </Drawer>
     );
 
-    let before = null;
+    let before = drawer;
     let after = null;
-
-    if (anchor === 'left') {
-      before = drawer;
-    } else {
-      after = drawer;
-    }
 
     return (
       <div className={classes.root}>
-        <TextField
-          id="persistent-anchor"
-          select
-          label="Anchor"
-          value={anchor}
-          onChange={this.handleChangeAnchor}
-          margin="normal"
-        >
-          <MenuItem value="left">left</MenuItem>
-          <MenuItem value="right">right</MenuItem>
-        </TextField>
         <div className={classes.appFrame}>
           <AppBar
             className={classNames(classes.appBar, {
               [classes.appBarShift]: open,
-              [classes[`appBarShift-${anchor}`]]: open,
+              [classes[`appBarShift-left`]]: open,
             })}
           >
             <Toolbar disableGutters={!open}>
@@ -181,15 +148,15 @@ class Navbar extends React.Component {
                 <MenuIcon />
               </IconButton>
               <Typography variant="title" color="inherit" noWrap>
-                Persistent drawer
+                togezer
               </Typography>
             </Toolbar>
           </AppBar>
           {before}
           <main
-            className={classNames(classes.content, classes[`content-${anchor}`], {
+            className={classNames(classes.content, classes[`content-left`], {
               [classes.contentShift]: open,
-              [classes[`contentShift-${anchor}`]]: open,
+              [classes[`contentShift-left`]]: open,
             })}
           >
             <div className={classes.drawerHeader} />

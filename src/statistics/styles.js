@@ -1,0 +1,20 @@
+export const mainStyle = {
+  content:{
+    minHeight:'100vh',
+  },
+  chartsPaper:{
+    padding:40,
+  },
+  chartsResponsive:{
+    width:'90%!important',
+    height:'500px!important',
+    '@media(max-width:650px)':{
+      width:'450px!important',
+      height:'350px!important',
+    },
+    '@media(max-width:550px)':{
+      width:'300px!important',
+      height:'350px!important',
+    },
+  },
+}

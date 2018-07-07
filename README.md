@@ -21,14 +21,6 @@
 ```sh
   yarn start
 ```
-
-## Test Unit
-
-- this project use Jest and Enzyme (devDependecies)
-```sh
-yarn add enzyme enzyme-adapter-react-16 -D
-```
-
 ## File Structure
 
 This project use the file structure *Grouping by features or routes*
@@ -39,5 +31,16 @@ for more info [React File Structure](https://reactjs.org/docs/faq-structure.html
 This project use Material UI
 [Material UI](https://material-ui.com/)
 
+## Charting library 
+
+This project use Recharts
+[Recharts](http://recharts.org/en-US)
+
+## Test Unit
+
+- this project use Jest and Enzyme (devDependecies)
+```sh
+yarn add enzyme enzyme-adapter-react-16 -D
+```
 ## Great!!
 > togezer &copy;2018

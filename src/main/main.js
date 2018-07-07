@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from './navbar';
 
-class Menu extends Component{
+class Main extends Component{
   render(){
     return(
       <div>
@@ -13,4 +13,4 @@ class Menu extends Component{
   }
 };
 
-export default Menu;
+export default Main;

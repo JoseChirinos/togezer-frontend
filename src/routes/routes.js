@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import RouterList from './components/router-list';
-import Menu from '../menu/menu';
+import Main from '../main/main';
 import Login from '../login/login';
 
 class RouterApp extends Component {
@@ -13,9 +13,9 @@ class RouterApp extends Component {
       <Router>
         {
           this.state.auth ?
-          <Menu>
+          <Main>
             <RouterList/>
-          </Menu>
+          </Main>
           : <Login/>
         }
       </Router>

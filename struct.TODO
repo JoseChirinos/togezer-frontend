@@ -10,19 +10,32 @@ Qué es un DMC:
     y/o nichos de mercado de alto valor)
 
 Graficas:
-  Month (Mes)
 
-  New Travels (Nuevos Viajes Registrados)
-  in (240) Travel Agencies
+  New Travel Agency (Nuevos Agencias de Viajes Registradas)
+  (MES)
+  ( una linea area )
 
-  Access in Travel Agencies
+  Access in Travel Agencies (cuantos entran ala plataforma)
   1200, (800 unicos)
+  ( interno, linea )
 
-  400 Clicks in DMC (Destination Management Company)
+  400 Clicks in DMC (cuantos me han visitado)
+  (Destination Management Company)
+  cuantas Travel Agencies hacen Click
+  ( barras, total mes  (linea) )
 
   200 Clicks in GIT (Group Departures)
+  (MES detalle)
+  para cada GIT<=10 una estadistica (comboBox para elegir GIT)
+  (GIT)
+  (barras para mostrar cuantos clicks por semana)
 
-  50 licitaciones
+  50 licitaciones (Requerimientos)
+  ( pendiente )
+
+
+Son 2 dashboards:
+  (manejar roles y permisos)
 
 
 
